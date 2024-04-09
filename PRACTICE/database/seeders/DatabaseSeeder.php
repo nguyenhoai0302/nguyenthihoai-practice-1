@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use AddColumnsToProductsTable;
+use App\Models\Post;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,5 +20,8 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        $this->call(PostsTableSeeder::class);
+        Post::factory(10)->create();
     }
 }

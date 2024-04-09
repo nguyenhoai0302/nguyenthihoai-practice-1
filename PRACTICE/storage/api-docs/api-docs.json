@@ -1,0 +1,47 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Your super Application API",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/posts": {
+            "post": {
+                "tags": [
+                    "Post"
+                ],
+                "summary": "Tạo một bài viết mới",
+                "description": "Endpoint để tạo một bài viết mới trong ứng dụng của bạn",
+                "operationId": "createPost",
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "description": "Nhập tiêu đề của bài viết",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "description": "Nhập mô tả của bài viết",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
